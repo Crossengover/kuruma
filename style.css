@@ -17,7 +17,7 @@ nav img.logo {
 section {
   position: relative;
   width: 100%;
-  height: 800px; /* Уменьшена высота секции */
+  min-height: 800px; /* Уменьшена высота секции */
 
   display: flex;
   justify-content: center;
@@ -134,15 +134,15 @@ nav a:active {
 }
 
 .review {
-  border: 1px solid #ccc; /* Рамка вокруг отзыва */
-  border-radius: 8px; /* Скругление углов */
-  padding: 20px; /* Внутренний отступ */
-  margin: 10px; /* Отступ между отзывами */
-  width: 300px; /* Ширина отзыва */
-  text-align: center; /* Текст по центру */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0; /* Отступы между отзывами */
+  width: 90%; /* Увеличьте ширину для мобильных */
+  max-width: 300px; /* Ограничьте максимальную ширину */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .review-photo {
   width: 100%; /* Ширина фото */
   height: auto; /* Автоматическая высота для поддержания пропорций */
