@@ -1,0 +1,213 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Bradley Hand", cursive; /* Основной шрифт */
+  font-size: 1.5em;
+}
+nav img.logo {
+  height: 51px; /* Установите подходящую высоту */
+  margin-right: 20px; /* Отступ между логотипом и ссылками */
+  vertical-align: middle; /* Вертикальное выравнивание */
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 800px; /* Уменьшена высота секции */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em; /* Уменьшен размер шрифта */
+  font-weight: 400; /* Уменьшен вес шрифта для более легкого вида */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  opacity: 0; /* Начальная непрозрачность для анимации */
+  animation: fadeIn 1s forwards; /* Анимация при загрузке */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Начальная позиция */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Конечная позиция */
+  }
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.image-left,
+.image-right {
+  width: 40%; /* Установите ширину изображения */
+  height: auto;
+}
+
+.image-left {
+  margin-right: 20px;
+}
+
+.image-right {
+  margin-left: 20px;
+}
+
+.text-content {
+  animation: fadeIn 1s forwards; /* Анимация для текста */
+}
+
+.text-content h2 {
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+section:nth-child(odd) {
+  background: #b6613d;
+}
+
+section:nth-child(even) {
+  background: #808000;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background: #010101;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+  position: relative;
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2em; /* Уменьшен размер шрифта навигации */
+  text-transform: uppercase;
+  display: inline-block;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover,
+section#n1:hover ~ nav a[href="#n1"],
+section#n2:hover ~ nav a[href="#n2"],
+section#n3:hover ~ nav a[href="#n3"],
+section#n4:hover ~ nav a[href="#n4"],
+section#n5:hover ~ nav a[href="#n5"] {
+  background: #b6613d;
+  color: #000000;
+}
+
+nav a:active {
+  background: #964725;
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: center; /* Центрируем контейнер по горизонтали */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  flex-wrap: wrap; /* Позволяет отзывам переноситься на новую строку, если не помещаются */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.reviews-container h2 {
+  text-align: center; /* Центрирование заголовка */
+  width: 100%; /* Чтобы заголовок занимал всю ширину контейнера */
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
+}
+
+.review {
+  border: 1px solid #ccc; /* Рамка вокруг отзыва */
+  border-radius: 8px; /* Скругление углов */
+  padding: 20px; /* Внутренний отступ */
+  margin: 10px; /* Отступ между отзывами */
+  width: 300px; /* Ширина отзыва */
+  text-align: center; /* Текст по центру */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.review-photo {
+  width: 100%; /* Ширина фото */
+  height: auto; /* Автоматическая высота для поддержания пропорций */
+  border-radius: 50%; /* Круглая форма для фото */
+  margin-bottom: 10px; /* Отступ снизу фото */
+}
+
+#advantages-list {
+  list-style: none; /* Убираем маркеры */
+  padding: 0; /* Убираем отступы */
+}
+
+#advantages-list li {
+  margin-bottom: 20px; /* Отступ между элементами списка */
+  background: rgba(159, 128, 16, 0.9); /* Фон для каждого элемента списка */
+  border-radius: 5px; /* Скругление углов */
+  padding: 15px; /* Внутренние отступы */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); /* Тень */
+  transition: transform 0.3s; /* Плавный переход при наведении */
+}
+
+#advantages-list li:hover {
+  transform: translateY(-5px); /* Эффект при наведении */
+}
+.contacts-container {
+  text-align: center; /* Центрирование всего контейнера */
+  margin: 20px 0; /* Отступы сверху и снизу */
+}
+
+.contacts-header {
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
+}
+
+.contacts-content {
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение содержимого */
+  align-items: center; /* Центрирование содержимого */
+}
+
+.contacts-icons {
+  display: flex;
+  justify-content: center; /* Центрирование иконок */
+  gap: 50px; /* Расстояние между иконками */
+}
+
+.contacts-icons img {
+  width: 70px; /* Ширина иконки */
+  height: auto; /* Автоматическая высота для пропорций */
+  cursor: pointer; /* Указатель при наведении */
+  transition: transform 0.2s; /* Плавный эффект при наведении */
+}
+
+.contacts-icons img:hover {
+  transform: scale(1.1); /* Увеличение иконки при наведении */
+}
+
+.logo {
+  width: 80px; /* Установите желаемую ширину логотипа */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  margin-bottom: px; /* Отступ снизу для отделения от заголовка */
+}
+.section {
+  margin: 0; /* Удаление внешних отступов */
+  padding: 0; /* Удаление внутренних отступов */
+}
+
+/* Подключение Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap");
